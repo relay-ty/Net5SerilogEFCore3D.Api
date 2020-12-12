@@ -10,5 +10,5 @@
     "type": "project"
   },
   "sourceName": "Net5SerilogEFCore3D", //将替换字符串'Net5SerilogEFCore3D'值 通过-n提供
-  "preferNameDirectory": true //如果指定了名称，但未设置输出目录）指示是否为模板创建目录（而不是直接在当前目录中创建内容）。 默认值是 False。
+  "preferNameDirectory": true //如果指定了名称，但未设置输出目录是否为模板创建目录（而不是直接在当前目录中创建内容）。 默认值是 False。
 }

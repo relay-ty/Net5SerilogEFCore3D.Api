@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Net5SerilogEFCore3D.Domain.Core\Net5SerilogEFCore3D.Domain.Core.csproj" />
+  </ItemGroup>
+
+</Project>

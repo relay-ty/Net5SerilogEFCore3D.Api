@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="9.3.0" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Net5SerilogEFCore3D.Infrastructure.EF.Shared\Net5SerilogEFCore3D.Infrastructure.EF.Shared.csproj" />
+  </ItemGroup>
+</Project>

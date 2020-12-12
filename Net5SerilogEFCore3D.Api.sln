@@ -5,11 +5,26 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5SerilogEFCore3D.Api", "Net5SerilogEFCore3D.Api\Net5SerilogEFCore3D.Api.csproj", "{E83CB90E-D73E-420E-BA08-AE90304C400E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2A6A0244-BFAB-449C-BD28-10CA7F4193C1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{2A6A0244-BFAB-449C-BD28-10CA7F4193C1}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
-		.template.config\template.json = .template.config\template.json
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5SerilogEFCore3D.Application", "Net5SerilogEFCore3D.Application\Net5SerilogEFCore3D.Application.csproj", "{0D7278E0-079F-4A09-9260-FA0F56019ABE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5SerilogEFCore3D.Domain", "Net5SerilogEFCore3D.Domain\Net5SerilogEFCore3D.Domain.csproj", "{AE1BDADE-CD1B-471B-9257-E5C2A3F852B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5SerilogEFCore3D.Domain.Core", "Net5SerilogEFCore3D.Domain.Core\Net5SerilogEFCore3D.Domain.Core.csproj", "{5D411882-C05E-442F-947D-305E7C07EDE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5SerilogEFCore3D.Infrastructure", "Net5SerilogEFCore3D.Infrastructure\Net5SerilogEFCore3D.Infrastructure.csproj", "{78A98C65-3234-44E5-BB40-E12418F45970}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5SerilogEFCore3D.Infrastructure.EF.MySql", "Net5SerilogEFCore3D.Infrastructure.EF.MySql\Net5SerilogEFCore3D.Infrastructure.EF.MySql.csproj", "{16E1D2FE-5C36-4C0F-99A2-3F7B7A30F021}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5SerilogEFCore3D.Infrastructure.EF.Shared", "Net5SerilogEFCore3D.Infrastructure.EF.Shared\Net5SerilogEFCore3D.Infrastructure.EF.Shared.csproj", "{E8732148-B33B-4036-AB65-D715042D502F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net5SerilogEFCore3D.Infrastructure.EF.SqlServer", "Net5SerilogEFCore3D.Infrastructure.EF.SqlServer\Net5SerilogEFCore3D.Infrastructure.EF.SqlServer.csproj", "{38B37D51-7467-412A-8649-7E93BE0C43C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5SerilogEFCore3D.Model", "Net5SerilogEFCore3D.Model\Net5SerilogEFCore3D.Model.csproj", "{185FCB28-CBB6-4F5D-A4E8-6528E5EE5DA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +36,38 @@ Global
 		{E83CB90E-D73E-420E-BA08-AE90304C400E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E83CB90E-D73E-420E-BA08-AE90304C400E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E83CB90E-D73E-420E-BA08-AE90304C400E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D7278E0-079F-4A09-9260-FA0F56019ABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D7278E0-079F-4A09-9260-FA0F56019ABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D7278E0-079F-4A09-9260-FA0F56019ABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D7278E0-079F-4A09-9260-FA0F56019ABE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE1BDADE-CD1B-471B-9257-E5C2A3F852B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE1BDADE-CD1B-471B-9257-E5C2A3F852B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE1BDADE-CD1B-471B-9257-E5C2A3F852B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE1BDADE-CD1B-471B-9257-E5C2A3F852B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D411882-C05E-442F-947D-305E7C07EDE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D411882-C05E-442F-947D-305E7C07EDE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D411882-C05E-442F-947D-305E7C07EDE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D411882-C05E-442F-947D-305E7C07EDE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78A98C65-3234-44E5-BB40-E12418F45970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78A98C65-3234-44E5-BB40-E12418F45970}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78A98C65-3234-44E5-BB40-E12418F45970}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78A98C65-3234-44E5-BB40-E12418F45970}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16E1D2FE-5C36-4C0F-99A2-3F7B7A30F021}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16E1D2FE-5C36-4C0F-99A2-3F7B7A30F021}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16E1D2FE-5C36-4C0F-99A2-3F7B7A30F021}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16E1D2FE-5C36-4C0F-99A2-3F7B7A30F021}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8732148-B33B-4036-AB65-D715042D502F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8732148-B33B-4036-AB65-D715042D502F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8732148-B33B-4036-AB65-D715042D502F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8732148-B33B-4036-AB65-D715042D502F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38B37D51-7467-412A-8649-7E93BE0C43C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38B37D51-7467-412A-8649-7E93BE0C43C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38B37D51-7467-412A-8649-7E93BE0C43C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38B37D51-7467-412A-8649-7E93BE0C43C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{185FCB28-CBB6-4F5D-A4E8-6528E5EE5DA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{185FCB28-CBB6-4F5D-A4E8-6528E5EE5DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{185FCB28-CBB6-4F5D-A4E8-6528E5EE5DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{185FCB28-CBB6-4F5D-A4E8-6528E5EE5DA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

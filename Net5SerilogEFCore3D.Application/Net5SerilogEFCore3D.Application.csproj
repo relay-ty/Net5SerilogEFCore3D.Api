@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Net5SerilogEFCore3D.Domain\Net5SerilogEFCore3D.Domain.csproj" />
+    <ProjectReference Include="..\Net5SerilogEFCore3D.Infrastructure.EF.Shared\Net5SerilogEFCore3D.Infrastructure.EF.Shared.csproj" />
+    <ProjectReference Include="..\Net5SerilogEFCore3D.Model\Net5SerilogEFCore3D.Model.csproj" />
+  </ItemGroup>
+
+</Project>
