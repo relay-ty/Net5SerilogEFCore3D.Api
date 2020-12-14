@@ -31,7 +31,7 @@ namespace Net5SerilogEFCore3D.Api.Extensions.ServiceExtensions
                         {
                             switch (item.DbContextName)
                             {
-                                case "SerilogDbContext":
+                                case nameof(SerilogDbContext):
                                     services.RegisterSqlServerDbContexts<SerilogDbContext>(item.ConnectionString);
                                     break;
                                 default:
@@ -43,7 +43,7 @@ namespace Net5SerilogEFCore3D.Api.Extensions.ServiceExtensions
                         {
                             switch (item.DbContextName)
                             {
-                                case "SerilogDbContext":
+                                case nameof(SerilogDbContext):
                                     services.RegisterMySqlDbContexts<SerilogDbContext>(item.ConnectionString);
                                     break;
                                 default:

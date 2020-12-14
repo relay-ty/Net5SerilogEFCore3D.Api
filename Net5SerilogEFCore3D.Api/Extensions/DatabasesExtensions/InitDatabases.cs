@@ -32,7 +32,7 @@ namespace Net5SerilogEFCore3D.Api.Extensions.DatabasesExtensions
             {
                 switch (item.DbContextName)
                 {
-                    case "SerilogDbContext":
+                    case nameof(SerilogDbContext):
                         {
                             if (item.ApplyDatabaseMigrations)
                                 await EnsureDatabasesMigratedAsync<SerilogDbContext>(services);
