@@ -20,8 +20,8 @@ namespace Net5SerilogEFCore3D.Api.Extensions.ServiceExtensions
         public static void AddEFCoreSetup(this IServiceCollection services, IConfiguration configuration)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
-            var startupConfiguration = configuration.GetSection(nameof(StartupConfiguration)).Get<StartupConfiguration>();
-            var listDatabaseConfiguration = startupConfiguration.DatabasesConfiguration.Where(w => w.Enabled == true).OrderBy(o => o.Sort).ToList();
+            var listDatabaseConfiguration = configuration.GetSection(nameof(DatabaseConfiguration)).Get<List<DatabaseConfiguration>>()
+                .Where(w => w.Enabled == true).OrderBy(o => o.Sort).ToList();
 
             foreach (var item in listDatabaseConfiguration)
             {

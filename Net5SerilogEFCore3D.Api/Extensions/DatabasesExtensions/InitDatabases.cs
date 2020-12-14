@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Net5SerilogEFCore3D.Api.Configuration;
+using Net5SerilogEFCore3D.Infrastructure.EF.Shared.Configuration;
 using Net5SerilogEFCore3D.Infrastructure.EF.Shared.DbContexts;
 using System;
 using System.Collections.Generic;
@@ -22,8 +23,8 @@ namespace Net5SerilogEFCore3D.Api.Extensions.DatabasesExtensions
         /// <returns></returns>
         public static async Task ApplyDbMigrationsWithDataSeedAsync(string[] args, IConfiguration configuration, IHost host)
         {
-            var startupConfiguration = configuration.GetSection(nameof(StartupConfiguration)).Get<StartupConfiguration>();
-            var listDatabaseConfiguration = startupConfiguration.DatabasesConfiguration.Where(w => w.Enabled == true).OrderBy(o => o.Sort).ToList();
+            var listDatabaseConfiguration = configuration.GetSection(nameof(DatabaseConfiguration)).Get<List<DatabaseConfiguration>>()
+                .Where(w => w.Enabled == true).OrderBy(o => o.Sort).ToList();
 
             using var serviceScope = host.Services.CreateScope();
             var services = serviceScope.ServiceProvider;
