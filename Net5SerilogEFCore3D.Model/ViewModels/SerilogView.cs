@@ -11,6 +11,7 @@ namespace Net5SerilogEFCore3D.Model.ViewModels
         public string Message { get;  set; }
         public string Level { get;  set; }
         public DateTimeOffset TimeStamp { get;  set; }
+        public string Exception { get;  set; }
         public string LogEvent { get;  set; }
     }
 }

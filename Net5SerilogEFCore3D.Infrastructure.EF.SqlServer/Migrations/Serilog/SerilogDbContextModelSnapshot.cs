@@ -35,6 +35,9 @@ namespace Net5SerilogEFCore3D.Infrastructure.EF.SqlServer.Migrations.Serilog
                     b.Property<DateTimeOffset?>("DeletdTime")
                         .HasColumnType("datetimeoffset");
 
+                    b.Property<string>("Exception")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool?>("IsDeleted")
                         .HasColumnType("bit");
 

@@ -16,6 +16,7 @@ namespace Net5SerilogEFCore3D.Infrastructure.EF.SqlServer.Migrations.Serilog
                     Message = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Level = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: true),
                     TimeStamp = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
+                    Exception = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LogEvent = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Remarks = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: true),

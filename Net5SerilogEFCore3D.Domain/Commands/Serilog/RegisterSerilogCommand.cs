@@ -14,13 +14,14 @@ namespace Net5SerilogEFCore3D.Domain.Commands.Serilog
     public class RegisterSerilogCommand : SerilogCommand
     {
         // set 受保护，只能通过构造函数方法赋值
-        public RegisterSerilogCommand(int id, string message, string level, DateTimeOffset timeStamp, string logEvent
+        public RegisterSerilogCommand(int id, string message, string level, DateTimeOffset timeStamp,string exception, string logEvent
             , string remarks, bool? isEnable, DateTimeOffset? createTime, Guid? createUserId)
         {
             Id = id;
             Message = message;
             Level = level;
             TimeStamp = timeStamp;
+            Exception = exception;
             LogEvent = logEvent;
 
             Remarks = remarks;

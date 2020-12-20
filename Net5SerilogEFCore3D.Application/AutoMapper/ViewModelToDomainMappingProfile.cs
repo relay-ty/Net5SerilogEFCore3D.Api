@@ -14,10 +14,10 @@ namespace Net5SerilogEFCore3D.Application.AutoMapper
         //这里是视图模型 -> 领域命令的映射
         public ViewModelToDomainMappingProfile()
         {
-            #region AgentYncmccCnOpenCarView
+            #region SerilogView
             //视图模型 -> 添加信息命令模型
             CreateMap<SerilogView, RegisterSerilogCommand>()
-                .ConstructUsing(c => new RegisterSerilogCommand(c.Id,c.Message,c.Level,c.TimeStamp.ToUniversalTime(),c.LogEvent,c.Remarks,c.IsEnable,c.CreateTime,c.CreateUserId));
+                .ConstructUsing(c => new RegisterSerilogCommand(c.Id,c.Message,c.Level,c.TimeStamp.ToUniversalTime(),c.Exception, c.LogEvent,c.Remarks,c.IsEnable,c.CreateTime,c.CreateUserId));
             #endregion
 
 

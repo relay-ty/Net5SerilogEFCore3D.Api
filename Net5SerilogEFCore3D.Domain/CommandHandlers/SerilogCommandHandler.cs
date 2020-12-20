@@ -55,7 +55,7 @@ namespace Net5SerilogEFCore3D.Domain.CommandHandlers
             }
             // 实例化领域模型，这里才真正的用到了领域模型
             // 注意这里是通过构造函数方法实现
-            var customer = new Serilog(message.Id, message.Message,message.Level,message.TimeStamp,message.LogEvent,
+            var customer = new Serilog(message.Id, message.Message,message.Level,message.TimeStamp,message.Exception, message.LogEvent,
                 message.Remarks, message.IsDeleted, message.IsEnable, message.CreateTime, message.CreateUserId, message.ModifyUserId);
 
             // 持久化

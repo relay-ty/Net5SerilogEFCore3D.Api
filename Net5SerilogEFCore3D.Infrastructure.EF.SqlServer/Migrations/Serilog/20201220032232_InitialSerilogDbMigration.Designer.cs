@@ -10,7 +10,7 @@ using Net5SerilogEFCore3D.Infrastructure.EF.Shared.DbContexts;
 namespace Net5SerilogEFCore3D.Infrastructure.EF.SqlServer.Migrations.Serilog
 {
     [DbContext(typeof(SerilogDbContext))]
-    [Migration("20201213065049_InitialSerilogDbMigration")]
+    [Migration("20201220032232_InitialSerilogDbMigration")]
     partial class InitialSerilogDbMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,6 +36,9 @@ namespace Net5SerilogEFCore3D.Infrastructure.EF.SqlServer.Migrations.Serilog
 
                     b.Property<DateTimeOffset?>("DeletdTime")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("Exception")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool?>("IsDeleted")
                         .HasColumnType("bit");

@@ -14,6 +14,7 @@ namespace Net5SerilogEFCore3D.Domain.Commands.Serilog
         public string Message { get; protected set; }
         public string Level { get; protected set; }
         public DateTimeOffset TimeStamp { get; protected set; }
+        public string Exception { get; protected set; }
         public string LogEvent { get; protected set; }
     }
 }
