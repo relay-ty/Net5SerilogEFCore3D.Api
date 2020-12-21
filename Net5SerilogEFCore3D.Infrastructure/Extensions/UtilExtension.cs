@@ -120,10 +120,10 @@ namespace Net5SerilogEFCore3D.Infrastructure.Extensions
         /// </summary>
         /// <param name="thisValue"></param>
         /// <returns></returns>
-        public static DateTime ObjToDate(this object thisValue)
+        public static DateTimeOffset ObjToDate(this object thisValue)
         {
-            DateTime reval = DateTime.MinValue;
-            if (thisValue != null && thisValue != DBNull.Value && DateTime.TryParse(thisValue.ToString(), out reval))
+            DateTimeOffset reval = DateTimeOffset.MinValue;
+            if (thisValue != null && thisValue != DBNull.Value && DateTimeOffset.TryParse(thisValue.ToString(), out reval))
             {
                 reval = Convert.ToDateTime(thisValue);
             }
@@ -135,9 +135,9 @@ namespace Net5SerilogEFCore3D.Infrastructure.Extensions
         /// <param name="thisValue"></param>
         /// <param name="errorValue"></param>
         /// <returns></returns>
-        public static DateTime ObjToDate(this object thisValue, DateTime errorValue)
+        public static DateTimeOffset ObjToDate(this object thisValue, DateTimeOffset errorValue)
         {
-            if (thisValue != null && thisValue != DBNull.Value && DateTime.TryParse(thisValue.ToString(), out DateTime reval))
+            if (thisValue != null && thisValue != DBNull.Value && DateTimeOffset.TryParse(thisValue.ToString(), out DateTimeOffset reval))
             {
                 return reval;
             }
@@ -272,11 +272,11 @@ namespace Net5SerilogEFCore3D.Infrastructure.Extensions
             }
             return result;
         }
-        public static string CharAt(this string str, int index)
+        public static string CharAt(this string s, int index)
         {
-            if ((index >= str.Length) || (index < 0))
+            if ((index >= s.Length) || (index < 0))
                 return "";
-            return str.Substring(index, 1);
+            return s.Substring(index, 1);
         }
         #endregion
     }
