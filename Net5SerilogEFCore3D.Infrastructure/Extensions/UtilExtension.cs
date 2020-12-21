@@ -272,6 +272,12 @@ namespace Net5SerilogEFCore3D.Infrastructure.Extensions
             }
             return result;
         }
+        public static string CharAt(this string str, int index)
+        {
+            if ((index >= str.Length) || (index < 0))
+                return "";
+            return str.Substring(index, 1);
+        }
         #endregion
     }
 
