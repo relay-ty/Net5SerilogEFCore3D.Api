@@ -45,7 +45,8 @@ namespace Net5SerilogEFCore3D.Application.Services
             UnitOfWork = unitOfWork;
         }
 
-
+        public virtual bool Any() => QueryRepository.Any();
+        public virtual async Task<bool> AnyAsync() => await QueryRepository.AnyAsync();
 
         public virtual bool ExistsById(Guid id) => FirstByExpression(w => w.Id == id) != null; // QueryRepository.FindById(id) != null;
 

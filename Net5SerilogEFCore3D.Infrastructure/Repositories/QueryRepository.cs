@@ -23,7 +23,8 @@ namespace Net5SerilogEFCore3D.Infrastructure.Repositories
             DbSet = Context.Set<TEntity>();
         }
 
-
+        public virtual bool Any() => DbSet.AsNoTracking().Any();
+        public virtual async Task<bool> AnyAsync() => await DbSet.AsNoTracking().AnyAsync();
 
         public virtual bool ExistsByExpression(Expression<Func<TEntity, bool>> expression) => DbSet.AsNoTracking().Any(expression);
         public virtual async Task<bool> ExistsByExpressionAsync(Expression<Func<TEntity, bool>> expression) => await DbSet.AsNoTracking().AnyAsync(expression);

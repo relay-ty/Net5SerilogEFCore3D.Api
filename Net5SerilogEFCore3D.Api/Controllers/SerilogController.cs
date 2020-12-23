@@ -26,7 +26,7 @@ namespace Net5SerilogEFCore3D.Api.Controllers
         {
             // 视图模型验证
             if (!ModelState.IsValid)
-                return new MessageModel<object>() { Success = ModelState.IsValid, Message = "ModelState", Data = serilogView };
+                return new MessageModel<object>() { Success = ModelState.IsValid, Message = string.Join(",", ModelState.Values), Data = serilogView };
 
             // 执行添加方法
             await _SerilogService.RegisterAsync(serilogView);

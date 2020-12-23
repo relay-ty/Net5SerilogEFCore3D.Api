@@ -17,6 +17,9 @@ namespace Net5SerilogEFCore3D.Domain.Core.Interfaces
         where TEntity : class
         where TContext : DbContext
     {
+        bool Any();
+        Task<bool> AnyAsync();
+
         bool ExistsByExpression(Expression<Func<TEntity, bool>> expression);
         Task<bool> ExistsByExpressionAsync(Expression<Func<TEntity, bool>> expression);
         //TEntity FindById(Guid id);
