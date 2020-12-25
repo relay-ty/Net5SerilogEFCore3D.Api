@@ -1,4 +1,6 @@
 ﻿using MediatR;
+using Net5SerilogEFCore3D.Model.DomainCoreModels;
+using Net5SerilogEFCore3D.Model.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,19 +45,56 @@ namespace Net5SerilogEFCore3D.Domain.Core.Notifications
         // 判断在当前总线对象周期中，是否存在 Error 通知信息
         public virtual bool HasErrorNotifications()
         {
-            return GetNotifications().Any(w => w.DomainNotificationType == NotificationType.Error);
+            return GetNotifications().Any(w => w.DomainNotificationType == DomainNotificationType.Error);
         }
 
         // 判断在当前总线对象周期中，是否存在 Success 通知信息
         public virtual bool HasSuccessNotifications()
         {
-            return GetNotifications().Any(w => w.DomainNotificationType == NotificationType.Error);
+            return GetNotifications().Any(w => w.DomainNotificationType == DomainNotificationType.Error);
         }
 
         // 获取当前生命周期内的 DomainNotificationType 通知信息
-        public virtual List<DomainNotification> GetSpecifyTypeNotifications(NotificationType domainNotificationType)
+        public virtual List<DomainNotification> GetSpecifyTypeNotifications(DomainNotificationType domainNotificationType)
         {
             return _ListNotification.Where(w => w.DomainNotificationType == domainNotificationType).ToList();
+        }
+
+        /// <summary>
+        /// 处理消息返回
+        /// </summary>
+        /// <returns></returns>
+        public MessageModel<object> ReturnNotifications(object data = null)
+        {
+            // 消息通知
+            var notifications = GetNotifications();
+            if (HasErrorNotifications())
+            {
+                return new MessageModel<object>()
+                {
+                    Success = false,
+                    Message = string.Join(";", notifications.Select(s => s.Value)),
+                    Data = data,
+                    Notifications = notifications
+                };
+            }
+            if (HasSuccessNotifications())
+            {
+                return new MessageModel<object>()
+                {
+                    Success = true,
+                    Message = string.Join(";", notifications.Select(s => s.Value)),
+                    Data = data,
+                    Notifications = notifications
+                };
+            }
+            return new MessageModel<object>()
+            {
+                Success = false,
+                Message = string.Join(";", notifications.Select(s => s.Value)),
+                Data = data,
+                Notifications = notifications
+            };
         }
 
 

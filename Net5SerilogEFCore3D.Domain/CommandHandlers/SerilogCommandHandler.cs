@@ -4,6 +4,7 @@ using Net5SerilogEFCore3D.Domain.Core.Interfaces;
 using Net5SerilogEFCore3D.Domain.Core.Notifications;
 using Net5SerilogEFCore3D.Infrastructure.Bus;
 using Net5SerilogEFCore3D.Infrastructure.EF.Shared.DbContexts;
+using Net5SerilogEFCore3D.Model.DomainCoreModels;
 using Net5SerilogEFCore3D.Model.DomainModels;
 using System;
 using System.Collections.Generic;
@@ -64,7 +65,7 @@ namespace Net5SerilogEFCore3D.Domain.CommandHandlers
             if (await CommitAsync())
             {
                 //通过领域事件发布 成功 通知
-                await Bus.RaiseEvent(new DomainNotification(HandlerType.Register, NotificationType.Success, "", $"{typeof(Serilog).Name} 登记成功"));
+                await Bus.RaiseEvent(new DomainNotification(DomainHandlerType.Register, DomainNotificationType.Success, "", $"{typeof(Serilog).Name} 登记成功"));
             }
             return await Task.FromResult(new Unit());
 

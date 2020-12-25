@@ -3,6 +3,7 @@ using Net5SerilogEFCore3D.Domain.Core.Commands;
 using Net5SerilogEFCore3D.Domain.Core.Interfaces;
 using Net5SerilogEFCore3D.Domain.Core.Notifications;
 using Net5SerilogEFCore3D.Infrastructure.Bus;
+using Net5SerilogEFCore3D.Model.DomainCoreModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,7 +43,7 @@ namespace Net5SerilogEFCore3D.Domain.CommandHandlers
             foreach (var error in message.ValidationResult.Errors)
             {
                 //将错误信息提交到事件总线，派发出去
-                Bus.RaiseEvent(new DomainNotification(HandlerType.Validation, NotificationType.Error, "", error.ErrorMessage, message.Id));
+                Bus.RaiseEvent(new DomainNotification(DomainHandlerType.Validation, DomainNotificationType.Error, "", error.ErrorMessage, message.Id));
             }
 
         }
@@ -51,7 +52,7 @@ namespace Net5SerilogEFCore3D.Domain.CommandHandlers
         {
             foreach (var error in message.ValidationResult.Errors)
             { //将错误信息提交到事件总线，派发出去
-                await Bus.RaiseEvent(new DomainNotification(HandlerType.Validation, NotificationType.Error, "", error.ErrorMessage, message.Id));
+                await Bus.RaiseEvent(new DomainNotification(DomainHandlerType.Validation, DomainNotificationType.Error, "", error.ErrorMessage, message.Id));
             }
 
         }
@@ -62,7 +63,7 @@ namespace Net5SerilogEFCore3D.Domain.CommandHandlers
             foreach (var error in message.ValidationResult.Errors)
             {
                 //将错误信息提交到事件总线，派发出去
-                Bus.RaiseEvent(new DomainNotification(HandlerType.Validation, NotificationType.Error, "", error.ErrorMessage));
+                Bus.RaiseEvent(new DomainNotification(DomainHandlerType.Validation, DomainNotificationType.Error, "", error.ErrorMessage));
             }
 
         }
@@ -71,7 +72,7 @@ namespace Net5SerilogEFCore3D.Domain.CommandHandlers
         {
             foreach (var error in message.ValidationResult.Errors)
             { //将错误信息提交到事件总线，派发出去
-                await Bus.RaiseEvent(new DomainNotification(HandlerType.Validation, NotificationType.Error, "", error.ErrorMessage));
+                await Bus.RaiseEvent(new DomainNotification(DomainHandlerType.Validation, DomainNotificationType.Error, "", error.ErrorMessage));
             }
 
         }
@@ -89,7 +90,7 @@ namespace Net5SerilogEFCore3D.Domain.CommandHandlers
             catch (Exception error)
             {
                 //将错误信息提交到事件总线，派发出去
-                Bus.RaiseEvent(new DomainNotification(HandlerType.Commit, NotificationType.Error, "", error.Message));
+                Bus.RaiseEvent(new DomainNotification(DomainHandlerType.Commit, DomainNotificationType.Error, "", error.Message));
             }
             return false;
         }
@@ -104,7 +105,7 @@ namespace Net5SerilogEFCore3D.Domain.CommandHandlers
             catch (Exception error)
             {
                 //将错误信息提交到事件总线，派发出去
-                await Bus.RaiseEvent(new DomainNotification(HandlerType.Commit, NotificationType.Error, "", error.Message));
+                await Bus.RaiseEvent(new DomainNotification(DomainHandlerType.Commit, DomainNotificationType.Error, "", error.Message));
             }
             return false;
         }

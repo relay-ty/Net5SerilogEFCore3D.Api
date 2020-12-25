@@ -1,5 +1,5 @@
 ﻿using Net5SerilogEFCore3D.Domain.Core.Commands;
-using Net5SerilogEFCore3D.Domain.Core.Events;
+using Net5SerilogEFCore3D.Model.DomainCoreModels;
 using System.Threading.Tasks;
 
 namespace Net5SerilogEFCore3D.Infrastructure.Bus

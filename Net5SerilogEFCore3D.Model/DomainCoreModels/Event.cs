@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using System;
 
-namespace Net5SerilogEFCore3D.Domain.Core.Events
+namespace Net5SerilogEFCore3D.Model.DomainCoreModels
 {
     /// <summary>
     /// 事件模型 抽象基类，继承 INotification

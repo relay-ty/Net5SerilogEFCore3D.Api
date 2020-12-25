@@ -79,14 +79,14 @@ namespace Net5SerilogEFCore3D.Domain.CommandHandlers
             else
             {
                 //通过领域事件发布 错误 通知
-                await Bus.RaiseEvent(new DomainNotification(HandlerType.Remove, NotificationType.Error, "", $"{typeof(TEntity).Name} 不存在该Id {message.Id}！", message.Id));
+                await Bus.RaiseEvent(new DomainNotification(DomainHandlerType.Remove, DomainNotificationType.Error, "", $"{typeof(TEntity).Name} 不存在该Id {message.Id}！", message.Id));
                 return await Task.FromResult(new Unit());
             }
 
             if (await CommitAsync())
             {
                 //通过领域事件发布 通知 
-                await Bus.RaiseEvent(new DomainNotification(HandlerType.Remove, NotificationType.Success, "", $"{typeof(TEntity).Name} 删除成功", message.Id));
+                await Bus.RaiseEvent(new DomainNotification(DomainHandlerType.Remove, DomainNotificationType.Success, "", $"{typeof(TEntity).Name} 删除成功", message.Id));
             }
             return await Task.FromResult(new Unit());
         }
@@ -103,7 +103,7 @@ namespace Net5SerilogEFCore3D.Domain.CommandHandlers
             if (customer == null)
             {
                 //通过领域事件发布 错误 通知
-                await Bus.RaiseEvent(new DomainNotification(HandlerType.SoftDelete, NotificationType.Error, "", $"{typeof(TEntity).Name} 不存在该Id {message.Id}！", message.Id));
+                await Bus.RaiseEvent(new DomainNotification(DomainHandlerType.SoftDelete, DomainNotificationType.Error, "", $"{typeof(TEntity).Name} 不存在该Id {message.Id}！", message.Id));
                 return await Task.FromResult(new Unit());
             }
             customer.IsDeleted = true;
@@ -113,7 +113,7 @@ namespace Net5SerilogEFCore3D.Domain.CommandHandlers
             if (await CommitAsync())
             {
                 //通过领域事件发布 成功 通知
-                await Bus.RaiseEvent(new DomainNotification(HandlerType.Remove, NotificationType.Success, "", $"{typeof(TEntity).Name} 软删除成功", message.Id));
+                await Bus.RaiseEvent(new DomainNotification(DomainHandlerType.Remove, DomainNotificationType.Success, "", $"{typeof(TEntity).Name} 软删除成功", message.Id));
             }
             return await Task.FromResult(new Unit());
         }
@@ -130,7 +130,7 @@ namespace Net5SerilogEFCore3D.Domain.CommandHandlers
             if (customer == null)
             {
                 //通过领域事件发布 错误 通知
-                await Bus.RaiseEvent(new DomainNotification(HandlerType.SoftResume, NotificationType.Error, "", $"{typeof(TEntity).Name} 不存在该Id {message.Id}！", message.Id));
+                await Bus.RaiseEvent(new DomainNotification(DomainHandlerType.SoftResume, DomainNotificationType.Error, "", $"{typeof(TEntity).Name} 不存在该Id {message.Id}！", message.Id));
                 return await Task.FromResult(new Unit());
             }
             customer.IsDeleted = false;
@@ -140,7 +140,7 @@ namespace Net5SerilogEFCore3D.Domain.CommandHandlers
             if (await CommitAsync())
             {
                 //通过领域事件发布 成功 通知
-                await Bus.RaiseEvent(new DomainNotification(HandlerType.Remove, NotificationType.Success, "", $"{typeof(TEntity).Name} 软恢复成功", message.Id));
+                await Bus.RaiseEvent(new DomainNotification(DomainHandlerType.Remove, DomainNotificationType.Success, "", $"{typeof(TEntity).Name} 软恢复成功", message.Id));
             }
             return await Task.FromResult(new Unit());
         }

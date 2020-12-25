@@ -3,11 +3,8 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Net5SerilogEFCore3D.Application.Interfaces;
-using Net5SerilogEFCore3D.Domain.Core.Notifications;
+using Net5SerilogEFCore3D.Model.DomainCoreModels;
 using Net5SerilogEFCore3D.Model.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Net5SerilogEFCore3D.Api.Controllers

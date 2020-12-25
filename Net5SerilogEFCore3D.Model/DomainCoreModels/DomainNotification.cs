@@ -1,7 +1,6 @@
-﻿using Net5SerilogEFCore3D.Domain.Core.Events;
-using System;
+﻿using System;
 
-namespace Net5SerilogEFCore3D.Domain.Core.Notifications
+namespace Net5SerilogEFCore3D.Model.DomainCoreModels
 {
     /// <summary>
     /// 领域通知模型，用来获取当前总线中出现的通知信息
@@ -11,8 +10,8 @@ namespace Net5SerilogEFCore3D.Domain.Core.Notifications
     {
         // 标识
         public Guid DomainNotificationId { get; private set; }
-        public HandlerType HandlerType { get; private set; }
-        public NotificationType DomainNotificationType { get; private set; }
+        public DomainHandlerType HandlerType { get; private set; }
+        public DomainNotificationType DomainNotificationType { get; private set; }
         // 键（可以根据这个key，获取当前key下的全部通知信息）
         // 这个我们在事件源和事件回溯的时候会用到
         public string Key { get; private set; }
@@ -22,7 +21,7 @@ namespace Net5SerilogEFCore3D.Domain.Core.Notifications
         public int Version { get; private set; }
         public Guid? EntityPrimaryKey { get; private set; }
 
-        public DomainNotification(HandlerType handlerType, NotificationType domainNotificationType, string key, string value, Guid? entityPrimaryKey = null)
+        public DomainNotification(DomainHandlerType handlerType, DomainNotificationType domainNotificationType, string key, string value, Guid? entityPrimaryKey = null)
         {
             DomainNotificationId = Guid.NewGuid();
             HandlerType = handlerType;

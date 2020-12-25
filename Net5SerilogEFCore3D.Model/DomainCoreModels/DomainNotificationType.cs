@@ -1,6 +1,6 @@
-﻿namespace Net5SerilogEFCore3D.Domain.Core.Notifications
+﻿namespace Net5SerilogEFCore3D.Model.DomainCoreModels
 {
-    public enum NotificationType
+    public enum DomainNotificationType
     {
         Success = 1,
         Information = 2,

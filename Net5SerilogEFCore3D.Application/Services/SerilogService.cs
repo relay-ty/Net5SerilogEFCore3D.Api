@@ -7,6 +7,7 @@ using Net5SerilogEFCore3D.Domain.Core.Interfaces;
 using Net5SerilogEFCore3D.Domain.Core.Notifications;
 using Net5SerilogEFCore3D.Infrastructure.Bus;
 using Net5SerilogEFCore3D.Infrastructure.EF.Shared.DbContexts;
+using Net5SerilogEFCore3D.Model.DomainCoreModels;
 using Net5SerilogEFCore3D.Model.DomainModels;
 using Net5SerilogEFCore3D.Model.PaginatedModels;
 using Net5SerilogEFCore3D.Model.ViewModels;

@@ -106,14 +106,14 @@ namespace Net5SerilogEFCore3D.Application.Services
         {
             // 这里引入领域设计中的 软删除命令
             await Bus.SendCommand(new SoftDeleteCommand<TEntity>(id));
-            if (!Notifications.GetSpecifyTypeNotifications(NotificationType.Success).Any())
+            if (!Notifications.GetSpecifyTypeNotifications(DomainNotificationType.Success).Any())
                 Logger.LogWarning($"SoftDeleteAsync Erro At {typeof(TEntity).Name}", Notifications.GetNotifications());
         }
         public async Task SoftResumeAsync(Guid id)
         {
             // 这里引入领域设计中的 软恢复命令
             await Bus.SendCommand(new SoftResumeCommand<TEntity>(id));
-            if (!Notifications.GetSpecifyTypeNotifications(NotificationType.Success).Any())
+            if (!Notifications.GetSpecifyTypeNotifications(DomainNotificationType.Success).Any())
                 Logger.LogWarning($"SoftResumeAsync Erro At {typeof(TEntity).Name}", Notifications.GetNotifications());
         }
 
@@ -121,7 +121,7 @@ namespace Net5SerilogEFCore3D.Application.Services
         {
             // 这里引入领域设计中的 删除命令
             await Bus.SendCommand(new RemoveCommand<TEntity>(id));
-            if (!Notifications.GetSpecifyTypeNotifications(NotificationType.Success).Any())
+            if (!Notifications.GetSpecifyTypeNotifications(DomainNotificationType.Success).Any())
                 Logger.LogWarning($"RemoveAsync Erro At {typeof(TEntity).Name}", Notifications.GetNotifications());
         }
         #endregion

@@ -1,6 +1,6 @@
-﻿namespace Net5SerilogEFCore3D.Domain.Core.Notifications
+﻿namespace Net5SerilogEFCore3D.Model.DomainCoreModels
 {
-    public enum HandlerType
+    public enum DomainHandlerType
     {
         Register = 1,
         Update = 2, 
@@ -9,6 +9,7 @@
         SoftResume = 5,
         Reply = 6,
         Validation = 7, 
-        Commit = 8
+        Commit = 8, 
+        Retrieve = 9
     }
 }
